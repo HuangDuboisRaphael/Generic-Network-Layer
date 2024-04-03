@@ -1,6 +1,6 @@
 //
-//  Generic_Network_LayerTests.swift
-//  Generic-Network-LayerTests
+//  NetworkServiceTests.swift
+//  NetworkServiceTests
 //
 //  Created by Raphaël Huang-Dubois on 02/04/2024.
 //
@@ -8,10 +8,17 @@
 import XCTest
 @testable import Generic_Network_Layer
 
-final class Generic_Network_LayerTests: XCTestCase {
+final class NetworkServiceTests: XCTestCase {
+    var networkService: NetworkManager<Test>!
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        let request = Test()
+        
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [MockURLProtocol.self]
+        let urlSession = URLSession(configuration: configuration)
+        
+        networkService = NetworkManager(apiRequest: request, urlSession: urlSession)
     }
 
     override func tearDownWithError() throws {
