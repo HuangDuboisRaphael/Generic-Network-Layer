@@ -20,9 +20,7 @@ final class NetworkServiceTests: XCTestCase {
         networkManager = NetworkManager(urlSession: urlSession)
         catService = CatService(networkManager: networkManager)
     }
-    
-    
-    
+
     func testParsingResponse() async throws {
         let requestBuilder = URLRequestBuilder(with: "")
         XCTAssertThrowsError(try requestBuilder.build()) { error in
