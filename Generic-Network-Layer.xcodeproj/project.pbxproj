@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C2468A4E2BBDBBE000C54791 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2468A4D2BBDBBE000C54791 /* APIEndpoint.swift */; };
-		C2468A502BBDBBFC00C54791 /* APIHTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2468A4F2BBDBBFC00C54791 /* APIHTTPMethod.swift */; };
+		C2468A502BBDBBFC00C54791 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2468A4F2BBDBBFC00C54791 /* HTTPMethod.swift */; };
 		C2468A552BBDC11B00C54791 /* Cat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2468A542BBDC11B00C54791 /* Cat.swift */; };
 		C2468A582BBDC13F00C54791 /* CatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2468A572BBDC13F00C54791 /* CatService.swift */; };
 		C2468A5A2BBDC14F00C54791 /* CatResourceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2468A592BBDC14F00C54791 /* CatResourceProvider.swift */; };
@@ -22,6 +21,7 @@
 		C254D7442BBC5157009E6E61 /* Generic_Network_LayerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254D7432BBC5157009E6E61 /* Generic_Network_LayerUITestsLaunchTests.swift */; };
 		C254D7512BBC52D0009E6E61 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254D7502BBC52D0009E6E61 /* NetworkManager.swift */; };
 		C254D7532BBC7A59009E6E61 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C254D7522BBC7A59009E6E61 /* MockURLProtocol.swift */; };
+		C2810A2F2BBEC85C0044A1B4 /* URLRequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2810A2E2BBEC85C0044A1B4 /* URLRequestBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C2468A4D2BBDBBE000C54791 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
-		C2468A4F2BBDBBFC00C54791 /* APIHTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIHTTPMethod.swift; sourceTree = "<group>"; };
+		C2468A4F2BBDBBFC00C54791 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		C2468A542BBDC11B00C54791 /* Cat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cat.swift; sourceTree = "<group>"; };
 		C2468A572BBDC13F00C54791 /* CatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatService.swift; sourceTree = "<group>"; };
 		C2468A592BBDC14F00C54791 /* CatResourceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatResourceProvider.swift; sourceTree = "<group>"; };
@@ -60,6 +59,7 @@
 		C254D7432BBC5157009E6E61 /* Generic_Network_LayerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generic_Network_LayerUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C254D7502BBC52D0009E6E61 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		C254D7522BBC7A59009E6E61 /* MockURLProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		C2810A2E2BBEC85C0044A1B4 /* URLRequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +92,8 @@
 			children = (
 				C254D7502BBC52D0009E6E61 /* NetworkManager.swift */,
 				C2468A5B2BBDE1A000C54791 /* APIErrorHandler.swift */,
-				C2468A4D2BBDBBE000C54791 /* APIEndpoint.swift */,
-				C2468A4F2BBDBBFC00C54791 /* APIHTTPMethod.swift */,
+				C2810A2E2BBEC85C0044A1B4 /* URLRequestBuilder.swift */,
+				C2468A4F2BBDBBFC00C54791 /* HTTPMethod.swift */,
 			);
 			path = "Network Layer";
 			sourceTree = "<group>";
@@ -306,13 +306,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2468A582BBDC13F00C54791 /* CatService.swift in Sources */,
+				C2810A2F2BBEC85C0044A1B4 /* URLRequestBuilder.swift in Sources */,
 				C254D7292BBC5154009E6E61 /* ContentView.swift in Sources */,
 				C2468A5C2BBDE1A000C54791 /* APIErrorHandler.swift in Sources */,
 				C254D7512BBC52D0009E6E61 /* NetworkManager.swift in Sources */,
 				C2468A552BBDC11B00C54791 /* Cat.swift in Sources */,
-				C2468A502BBDBBFC00C54791 /* APIHTTPMethod.swift in Sources */,
+				C2468A502BBDBBFC00C54791 /* HTTPMethod.swift in Sources */,
 				C254D7272BBC5154009E6E61 /* Generic_Network_LayerApp.swift in Sources */,
-				C2468A4E2BBDBBE000C54791 /* APIEndpoint.swift in Sources */,
 				C2468A5A2BBDC14F00C54791 /* CatResourceProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

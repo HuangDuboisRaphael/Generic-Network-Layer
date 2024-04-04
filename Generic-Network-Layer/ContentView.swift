@@ -29,7 +29,7 @@ struct ContentView: View {
                 text = try await catService.getAFact().data[0]
             } catch {
                 messageError = error.localizedDescription
-                print(error.localizedDescription)
+                print(error)
             }
         }
     }

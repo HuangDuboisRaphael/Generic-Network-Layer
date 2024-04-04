@@ -9,7 +9,9 @@ import Foundation
 
 enum APIErrorHandler: Error {
     case noConnection
+    case badUrl
     case badRequest
+    case transportError
     case unauthorized
     case notFound
     case requestTimeout
@@ -25,7 +27,7 @@ extension APIErrorHandler: LocalizedError {
         switch self {
         case .noConnection:
             "Check your internet connection."
-        case .badRequest, .notFound, . requestTimeout, .encodingError, .decodingError, .serverError, .unauthorized, .tooManyRequests, .http:
+        case .badUrl, .notFound, .transportError, .requestTimeout, .encodingError, .decodingError, .serverError, .unauthorized, .tooManyRequests, .http, .badRequest:
             "Contact administrators for further help."
         }
     }
