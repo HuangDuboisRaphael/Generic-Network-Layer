@@ -9,35 +9,24 @@ import XCTest
 @testable import Generic_Network_Layer
 
 final class NetworkServiceTests: XCTestCase {
-    var networkService: NetworkManager<Test>!
+    var networkManager: NetworkManagerInterface!
+    var catService: CatServiceInterface!
 
     override func setUpWithError() throws {
-        let request = Test()
-        
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [MockURLProtocol.self]
         let urlSession = URLSession(configuration: configuration)
         
-        networkService = NetworkManager(apiRequest: request, urlSession: urlSession)
+        networkManager = NetworkManager(urlSession: urlSession)
+        catService = CatService(networkManager: networkManager)
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    
+    
+    func testParsingResponse() async throws {
+        let requestBuilder = URLRequestBuilder(with: "")
+        XCTAssertThrowsError(try requestBuilder.build()) { error in
+            XCTAssertEqual(error as? APIErrorHandler, APIErrorHandler.badUrl)
         }
     }
-
 }

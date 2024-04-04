@@ -19,7 +19,7 @@ final class CatService: CatServiceInterface {
     }
     
     func getAFact() async throws -> Cat {
-        let request = try CatResourceProvider.getAFact.buildRequest()
+        let request = try CatServiceProvider.getAFact.buildRequest()
         return try await networkManager.performRequest(request, decodingType: Cat.self)
     }
 }

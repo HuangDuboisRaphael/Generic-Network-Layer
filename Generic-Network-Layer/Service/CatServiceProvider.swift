@@ -7,15 +7,15 @@
 
 import Foundation
 
-enum CatResourceProvider {
+enum CatServiceProvider {
     case getAFact
 }
 
-extension CatResourceProvider {
+extension CatServiceProvider {
     func buildRequest() throws -> URLRequest {
         switch self {
         case .getAFact:
-            try URLRequestBuilder(with: "https://meowfacts.herokuapp.com/")
+            try URLRequestBuilder(with: ConfigurationApp.API.baseUrl)
                 .build()
         }
     }

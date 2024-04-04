@@ -18,7 +18,7 @@ final class NetworkManager: NetworkManagerInterface {
         self.urlSession = urlSession
     }
     
-    func performRequest<T>(_ request: URLRequest, decodingType: T.Type) async throws -> T where T : Decodable {
+    func performRequest<T: Decodable>(_ request: URLRequest, decodingType: T.Type) async throws -> T {
         var (data, response): (Data, URLResponse)
         do {
             (data, response) = try await urlSession.data(for: request)

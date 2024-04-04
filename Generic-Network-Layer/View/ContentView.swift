@@ -10,7 +10,6 @@ import SwiftUI
 struct ContentView: View {
     private let catService: CatServiceInterface
     @State private var text = ""
-    @State private var messageError = ""
     
     init(catService: CatServiceInterface = CatService()) {
         self.catService = catService
@@ -28,8 +27,7 @@ struct ContentView: View {
             do {
                 text = try await catService.getAFact().data[0]
             } catch {
-                messageError = error.localizedDescription
-                print(error)
+                text = error.localizedDescription
             }
         }
     }

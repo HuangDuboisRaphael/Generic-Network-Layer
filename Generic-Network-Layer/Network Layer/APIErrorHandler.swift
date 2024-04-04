@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum APIErrorHandler: Error {
+enum APIErrorHandler: Error, Equatable {
     case noConnection
     case badUrl
     case badRequest
