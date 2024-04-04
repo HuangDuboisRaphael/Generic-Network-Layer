@@ -12,18 +12,14 @@ protocol CatServiceInterface: AnyObject {
 }
 
 final class CatService: CatServiceInterface {
-    private let networkManager: NetworkInterface
+    private let networkManager: NetworkManagerInterface
     
-    init(networkManager: NetworkInterface = NetworkManager()) {
+    init(networkManager: NetworkManagerInterface = NetworkManager()) {
         self.networkManager = networkManager
     }
     
     func getAFact() async throws -> Cat {
-        let request = CatResourceProvider.getAFact.makeRequest
-        do {
-            return try await networkManager.performRequest(request, decodingType: Cat.self)
-        } catch {
-            throw error
-        }
+        let request = try CatResourceProvider.getAFact.buildRequest()
+        return try await networkManager.performRequest(request, decodingType: Cat.self)
     }
 }

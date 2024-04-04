@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol NetworkInterface: AnyObject {
+protocol NetworkManagerInterface: AnyObject {
     func performRequest<T>(_ request: URLRequest, decodingType: T.Type) async throws -> T where T: Decodable
 }
 
-final class NetworkManager: NetworkInterface {
+final class NetworkManager: NetworkManagerInterface {
     private let urlSession: URLSession
     
     init(urlSession: URLSession = .shared) {
@@ -23,7 +23,7 @@ final class NetworkManager: NetworkInterface {
         do {
             (data, response) = try await urlSession.data(for: request)
         } catch {
-            throw APIErrorHandler.badRequest
+            throw APIErrorHandler.transportError
         }
         try validateResponse(response)
         do {
